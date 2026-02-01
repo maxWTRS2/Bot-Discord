@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: Determine next version
         id: version
@@ -37,19 +40,11 @@ jobs:
       - name: Build shadowJar
         run: ./gradlew shadowJar
 
-      - name: Create Release
-        id: create_release
+      - name: Create Release + Upload JAR
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.version.outputs.version }}
           generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload JAR
-        uses: softprops/action-gh-release@v2
-        with:
           files: build/libs/botDiscord-1.0-all.jar
-          tag_name: v${{ steps.version.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
