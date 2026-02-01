@@ -7,7 +7,7 @@ RUN apt update && apt install -y docker.io && apt clean
 WORKDIR /bot
 
 # Copier ton JAR
-COPY build/libs/botDiscord-1.0-all.jar /bot/botDiscord-1.0-all.jar
+ADD https://github.com/maxWTRS2/Bot-Discord/releases/latest/download/botDiscord-1.0-all.jar /bot/botDiscord-1.0-all.jar
 
 # Lancer le bot
 CMD ["java", "-jar", "/bot/botDiscord-1.0-all.jar"]
