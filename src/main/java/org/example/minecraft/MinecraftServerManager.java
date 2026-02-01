@@ -198,4 +198,8 @@ public class MinecraftServerManager {
         MinecraftStatus status = fetchStatus();
         return MinecraftStatusFormatter.toText(status);
     }
+
+    public static void debanPlayer(String player) throws Exception {
+        rcon("rcon-cli", "pardon", player);
+    }
 }

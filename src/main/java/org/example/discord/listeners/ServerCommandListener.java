@@ -68,6 +68,7 @@ public class ServerCommandListener extends ListenerAdapter {
                 switch (sub) {
                     case "kick" -> ServerCommands.kick(event);
                     case "ban" -> ServerCommands.ban(event);
+                    case "deban" -> ServerCommands.deban(event);
                     case "op" -> ServerCommands.op(event);
                     case "deop" -> ServerCommands.deop(event);
                     case null -> {}

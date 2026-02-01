@@ -124,4 +124,17 @@ public class ServerCommands {
                 """;
         event.reply(helpMessage).setEphemeral(true).queue();
     }
+
+    public static void deban(SlashCommandInteractionEvent event) {
+        try {
+            String player = event.getOption("joueur").getAsString();
+
+
+            MinecraftServerManager.debanPlayer(player);
+
+            event.reply("✅ Joueur **" + player + "** débanni").queue();
+        } catch (Exception e) {
+            event.reply("❌ Impossible de débannir le joueur : " + e.getMessage()).queue();
+        }
+    }
 }
