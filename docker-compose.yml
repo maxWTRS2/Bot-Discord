@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  mc-bot:
+    build: .
+    container_name: mc-bot
+    restart: unless-stopped
+
+    volumes:
+      - ./config.json:/bot/config.json
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    networks:
+      - mc-network
+
+    environment:
+      - TZ=Europe/Brussels
+
+networks:
+  mc-network:
+    external: true

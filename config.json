@@ -1,0 +1,11 @@
+{
+  "token": "MTM1NzQ0OTg1NDg1MDE3NDk4Ng.GAAb8D.iMUiWERPvdOBZSn5wCgjQ2_ytzmjQA-QEje0TQ",
+  "guildId": "751837660993159198",
+  "adminRoles": ["zebi la mouche", "streamer"],
+  "minecraft": {
+    "ip": "mc-vanilla",
+    "port": 25565,
+    "protocol": 768,
+    "dockerContainer": "mc-vanilla"
+  }
+}
