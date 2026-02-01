@@ -9,21 +9,12 @@ services:
     volumes:
       - ./config.json:/bot/config.json
       - /var/run/docker.sock:/var/run/docker.sock
+
     networks:
       - mc-network
 
     environment:
       - TZ=Europe/Brussels
-
-  watchtower:
-    image: containrrr/watchtower
-    container_name: watchtower
-    restart: unless-stopped
-
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-
-    command: --interval 30
 
 networks:
   mc-network:
