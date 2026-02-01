@@ -79,6 +79,8 @@ public class ServerCommandListener extends ListenerAdapter {
                 assert sub != null;
                 if (sub.equals("creeper")) ServerCommands.creeper(event);
             }
+
+            case "help" -> ServerCommands.help(event);
         }
     }
 

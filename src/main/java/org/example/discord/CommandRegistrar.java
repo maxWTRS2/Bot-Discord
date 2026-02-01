@@ -2,6 +2,7 @@ package org.example.discord;
 
 import net.dv8tion.jda.api.JDA;
 //import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
@@ -44,7 +45,8 @@ public class CommandRegistrar {
                         .addSubcommands(
                                 new SubcommandData("creeper", "Joue le son d'un creeper sur un joueur")
                                         .addOption(OptionType.STRING, "joueur", "Nom du joueur cible", true)
-                        )
+                        ),
+                Commands.slash("help", "Affiche la liste des commandes disponibles")
         ).queue();
     }
 }

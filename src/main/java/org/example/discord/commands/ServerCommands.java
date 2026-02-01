@@ -106,4 +106,22 @@ public class ServerCommands {
             event.reply("❌ Impossible de retirer les droits OP : " + e.getMessage()).queue();
         }
     }
+
+    public static void help(SlashCommandInteractionEvent event) {
+        String helpMessage = """
+                **📘 Commandes disponibles**
+                **/server start** — Démarre le serveur
+                **/server stop** — Arrête le serveur *(admin)*
+                **/server restart** — Redémarre le serveur *(admin)*
+                **/server status** — Affiche le statut du serveur
+                
+                **/player kick <joueur> [raison]** — Kick un joueur *(admin)*
+                **/player ban <joueur> [raison]** — Ban un joueur *(admin)*
+                **/player op <joueur>** — Donne les permissions OP *(admin)*
+                **/player deop <joueur>** — Retire les permissions OP *(admin)*
+                
+                **/sound creeper <joueur>** — Joue un son de creeper *(admin)*
+                """;
+        event.reply(helpMessage).setEphemeral(true).queue();
+    }
 }
