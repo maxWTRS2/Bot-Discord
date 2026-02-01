@@ -48,7 +48,7 @@ public class CommandRegistrar {
                                 new SubcommandData("creeper", "Joue le son d'un creeper sur un joueur")
                                         .addOption(OptionType.STRING, "joueur", "Nom du joueur cible", true)
                         ),
-                Commands.slash("help", "Affiche la liste des commandes disponibles")
+                Commands.slash("help", "Affiche la liste des commandes disponibles avec le bot")
         ).queue();
     }
 }
