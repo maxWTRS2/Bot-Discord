@@ -35,7 +35,7 @@ public class CommandRegistrar {
                                         .addOption(OptionType.STRING, "joueur", "Nom du joueur à bannir", true)
                                         .addOption(OptionType.STRING, "raison", "Raison du ban", false),
                                 new SubcommandData("deban", "débanir une personne du serveur")
-                                        .addOption(OptionType.STRING, "joueur", "Nom du joueur à bannir", true),
+                                        .addOption(OptionType.STRING, "joueur", "Nom du joueur à pardonner", true),
 
                                 new SubcommandData("op", "Donne les perms du serveur Minecraft")
                                         .addOption(OptionType.STRING, "joueur", "Nom du joueur à op", true),
