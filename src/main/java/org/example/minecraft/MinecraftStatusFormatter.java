@@ -1,7 +1,5 @@
 package org.example.minecraft;
 
-import java.util.List;
-
 public class MinecraftStatusFormatter {
 
     public static String toText(MinecraftStatus s) {

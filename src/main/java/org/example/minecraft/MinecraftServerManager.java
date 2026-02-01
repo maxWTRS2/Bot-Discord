@@ -29,9 +29,6 @@ public class MinecraftServerManager {
         cmd[3] = container();
 
         System.arraycopy(args, 0, cmd, 4, args.length);
-
-        System.out.println(cmd);
-        System.out.flush();
         ProcessUtils.exec(cmd);
     }
 
@@ -87,9 +84,9 @@ public class MinecraftServerManager {
                 "playsound", "minecraft:entity.creeper.primed", "master", player, "~", "~", "~", "1", "1");
     }
 
-    public static void sendCommand(String command) throws Exception {
-        rcon("rcon-cli", command);
-    }
+//    public static void sendCommand(String command) throws Exception {
+//        rcon("rcon-cli", command);
+//    }
 
     // =====================
     // FETCH STATUS

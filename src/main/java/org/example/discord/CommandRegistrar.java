@@ -1,14 +1,14 @@
 package org.example.discord;
 
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.entities.Guild;
+//import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 
 public class CommandRegistrar {
 
-    public static void register(JDA jda, String guildId) {
+    public static void register(JDA jda/*, String guildId*/) {
 
 //        Guild guild = jda.getGuildById(guildId);
 //

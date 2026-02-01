@@ -20,7 +20,7 @@ public class Bot {
 
         jda.awaitReady();
 
-        CommandRegistrar.register(jda, config.getGuildId());
+        CommandRegistrar.register(jda/*, config.getGuildId()*/);
     }
 
     public static JDA getJda() {

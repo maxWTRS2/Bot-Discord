@@ -5,13 +5,9 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.example.config.BotConfig;
 import org.example.discord.commands.ServerCommands;
-
-import java.io.Console;
 import java.util.List;
 
 public class ServerCommandListener extends ListenerAdapter {
-
-    private static final String ADMIN_ROLE_NAME = "streamer"; // rôle autorisé
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -36,10 +32,13 @@ public class ServerCommandListener extends ListenerAdapter {
         boolean requiresAdmin = switch (name) {
             case "player" -> true; // toutes les commandes player sont admin
             case "sound" -> true;  // toutes les commandes sound sont admin
-            case "server" -> switch (sub) {
-                case "stop", "restart" -> true;
-                default -> false; // start/status accessibles à tous
-            };
+            case "server" -> {
+                assert sub != null;
+                yield switch (sub) {
+                    case "stop", "restart" -> true;
+                    default -> false; // start/status accessibles à tous
+                };
+            }
             default -> false;
         };
 
@@ -71,10 +70,13 @@ public class ServerCommandListener extends ListenerAdapter {
                     case "ban" -> ServerCommands.ban(event);
                     case "op" -> ServerCommands.op(event);
                     case "deop" -> ServerCommands.deop(event);
+                    case null -> {}
+                    default -> throw new IllegalStateException("Unexpected value: " + sub);
                 }
             }
 
             case "sound" -> {
+                assert sub != null;
                 if (sub.equals("creeper")) ServerCommands.creeper(event);
             }
         }
